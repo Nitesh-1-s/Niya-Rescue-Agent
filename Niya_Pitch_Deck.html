@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niya Rescue Agent - Visual Pitch Deck</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #cbd5e1; margin: 0; padding: 20px; }
+        
+        /* A4 Landscape Dimensions for perfect PDF saving */
+        .slide {
+            width: 297mm;
+            height: 210mm;
+            background: white;
+            margin: 0 auto 30px auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .slide { 
+                margin: 0; 
+                box-shadow: none; 
+                border-radius: 0; 
+                page-break-after: always; 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact; 
+            }
+        }
+        
+        /* Custom Colors */
+        .bg-ink { background-color: #0A1128; }
+        .text-ink { color: #0A1128; }
+        .bg-brand { background-color: #0052FF; }
+        .text-brand { color: #0052FF; }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: Title -->
+    <div class="slide bg-ink text-white flex flex-col justify-center px-24 relative">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand rounded-full filter blur-[150px] opacity-30 -translate-y-1/2 translate-x-1/2"></div>
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-16 h-16 bg-brand rounded-xl flex items-center justify-center shadow-lg">
+                <i data-lucide="shield-check" class="w-10 h-10 text-white"></i>
+            </div>
+            <h2 class="text-3xl font-semibold tracking-wide text-blue-300">Niya Enterprise</h2>
+        </div>
+        <h1 class="text-7xl font-bold tracking-tight mb-6 leading-tight">Autonomous Revenue <br/>Recovery Agent</h1>
+        <p class="text-2xl text-slate-400 font-light max-w-3xl">Razorpay AI Buildathon • Track 03</p>
+        <div class="mt-16 inline-flex items-center gap-3 px-6 py-3 bg-white/10 rounded-full border border-white/20 w-max">
+            <div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+            <span class="text-sm font-semibold tracking-widest uppercase">Live Production System</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: The Scenario / Problem -->
+    <div class="slide bg-slate-50 flex flex-col px-24 py-20">
+        <h2 class="text-brand font-bold uppercase tracking-widest text-sm mb-4">The Scenario</h2>
+        <h1 class="text-5xl font-bold text-ink mb-12">The Silent Leak in E-Commerce</h1>
+        
+        <div class="grid grid-cols-2 gap-16 h-full items-center pb-12">
+            <div>
+                <p class="text-2xl text-slate-600 leading-relaxed font-light">
+                    Every day, thousands of high-value transactions fail due to temporary bank outages, insufficient funds, or friction at checkout.
+                </p>
+                <p class="text-2xl text-slate-600 leading-relaxed font-light mt-6">
+                    Normally, this results in a frustrated customer, a lost sale, and a permanent drop in revenue. <strong>Until now.</strong>
+                </p>
+            </div>
+            
+            <div class="relative bg-white p-8 rounded-2xl border border-slate-200 shadow-xl">
+                <!-- Visual Flow -->
+                <div class="flex items-center justify-between mb-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i data-lucide="shopping-cart" class="w-8 h-8 text-slate-600"></i>
+                        </div>
+                        <p class="text-sm font-semibold">Customer</p>
+                        <p class="text-xs text-slate-500">₹49,999</p>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-8 h-8 text-slate-300"></i>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3 border-4 border-white shadow-md relative">
+                            <i data-lucide="x" class="w-8 h-8 text-red-600"></i>
+                        </div>
+                        <p class="text-sm font-semibold text-red-600">Payment Failed</p>
+                        <p class="text-xs text-slate-500">Bank Timeout</p>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-8 h-8 text-slate-300"></i>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i data-lucide="trending-down" class="w-8 h-8 text-slate-400"></i>
+                        </div>
+                        <p class="text-sm font-semibold">Merchant</p>
+                        <p class="text-xs text-slate-500">Sale Lost</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: How It Works (Visual Architecture) -->
+    <div class="slide bg-white flex flex-col px-24 py-20">
+        <h2 class="text-brand font-bold uppercase tracking-widest text-sm mb-4">The Solution</h2>
+        <h1 class="text-5xl font-bold text-ink mb-16">How Niya Agent Recovers Revenue</h1>
+        
+        <div class="flex items-center justify-between w-full">
+            
+            <!-- Step 1 -->
+            <div class="flex flex-col items-center w-64 text-center">
+                <div class="w-24 h-24 bg-red-50 border border-red-200 text-red-500 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                    <i data-lucide="alert-circle" class="w-12 h-12"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">1. Detect</h3>
+                <p class="text-sm text-slate-500">Intercepts failed payment webhooks in real-time.</p>
+            </div>
+
+            <i data-lucide="arrow-right" class="w-10 h-10 text-slate-300"></i>
+
+            <!-- Step 2 -->
+            <div class="flex flex-col items-center w-64 text-center">
+                <div class="w-24 h-24 bg-brand text-white rounded-2xl flex items-center justify-center mb-6 shadow-xl relative">
+                    <i data-lucide="brain-circuit" class="w-12 h-12"></i>
+                    <div class="absolute -top-3 -right-3 w-8 h-8 bg-amber-400 text-ink text-xs font-bold rounded-full flex items-center justify-center shadow-sm">AI</div>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">2. Analyze</h3>
+                <p class="text-sm text-slate-500">LLM diagnoses root cause (Bank down vs Fraud vs No Funds).</p>
+            </div>
+
+            <i data-lucide="arrow-right" class="w-10 h-10 text-slate-300"></i>
+
+            <!-- Step 3 -->
+            <div class="flex flex-col items-center w-64 text-center">
+                <div class="w-24 h-24 bg-emerald-50 border border-emerald-200 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                    <i data-lucide="zap" class="w-12 h-12"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">3. Execute</h3>
+                <p class="text-sm text-slate-500">Triggers a targeted, bounded recovery workflow.</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- SLIDE 4: Interventions (The Guardrails) -->
+    <div class="slide bg-slate-50 flex flex-col px-24 py-20">
+        <h2 class="text-brand font-bold uppercase tracking-widest text-sm mb-4">The Playbook</h2>
+        <h1 class="text-5xl font-bold text-ink mb-12">Three Targeted Interventions</h1>
+        
+        <div class="grid grid-cols-1 gap-6">
+            <!-- Intervention 1 -->
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center gap-8">
+                <div class="w-16 h-16 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="refresh-cw" class="w-8 h-8"></i>
+                </div>
+                <div class="flex-1">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="text-xl font-bold text-slate-800">Silent Retry</h3>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-mono font-bold rounded">ERROR: BANK_DOWNTIME</span>
+                    </div>
+                    <p class="text-slate-500 text-sm">When the AI detects a temporary bank crash, it avoids scaring the customer with an error. It safely schedules a background retry for 15 minutes later to save the sale seamlessly.</p>
+                </div>
+            </div>
+
+            <!-- Intervention 2 -->
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center gap-8">
+                <div class="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="message-square" class="w-8 h-8"></i>
+                </div>
+                <div class="flex-1">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="text-xl font-bold text-slate-800">Send Discount SMS</h3>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-mono font-bold rounded">ERROR: INSUFFICIENT_FUNDS</span>
+                    </div>
+                    <p class="text-slate-500 text-sm">If a customer abandons a cart or lacks funds, the AI acts as a closer. It immediately fires a webhook to send a personalized WhatsApp message with a 5% discount, enticing them to use a different card.</p>
+                </div>
+            </div>
+
+            <!-- Intervention 3 -->
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center gap-8">
+                <div class="w-16 h-16 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="user-x" class="w-8 h-8"></i>
+                </div>
+                <div class="flex-1">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="text-xl font-bold text-slate-800">Escalate to Human</h3>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-mono font-bold rounded">ERROR: FRAUD_FLAG</span>
+                    </div>
+                    <p class="text-slate-500 text-sm">Proving it operates within safe boundaries, the AI immediately halts execution when it detects high-risk edge cases (like suspected fraud). It compliantly escalates the ticket to human Ops.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: The Tech Stack (Architecture) -->
+    <div class="slide bg-white flex flex-col px-24 py-20">
+        <h2 class="text-brand font-bold uppercase tracking-widest text-sm mb-4">Architecture</h2>
+        <h1 class="text-5xl font-bold text-ink mb-12">The Tech Stack</h1>
+        
+        <div class="flex items-center justify-center w-full gap-6 h-full pb-8">
+            
+            <!-- Frontend -->
+            <div class="w-1/3 bg-slate-50 border border-slate-200 p-6 rounded-2xl shadow-sm text-center relative h-full flex flex-col">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="layout-dashboard" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Frontend</h3>
+                <p class="text-brand font-mono text-xs font-bold mb-4">NEXT.JS 14 • REACT • TAILWIND</p>
+                <p class="text-sm text-slate-600 text-left leading-relaxed">The presentation layer. An enterprise-grade dashboard designed for high data-density. It fetches live recovery metrics and renders dynamic visual simulations of outbound AI interventions (like WhatsApp CRM logs).</p>
+            </div>
+
+            <!-- Arrows -->
+            <div class="flex flex-col items-center flex-shrink-0">
+                <i data-lucide="arrow-left-right" class="w-8 h-8 text-slate-300"></i>
+                <span class="text-[10px] text-slate-400 font-mono mt-1">REST API</span>
+            </div>
+
+            <!-- Backend -->
+            <div class="w-1/3 bg-ink text-white p-6 rounded-2xl shadow-xl text-center relative border-2 border-brand h-full flex flex-col">
+                <div class="w-16 h-16 bg-brand text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="server" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Agent Engine</h3>
+                <p class="text-blue-300 font-mono text-xs font-bold mb-4">PYTHON • FASTAPI</p>
+                <p class="text-sm text-slate-300 text-left leading-relaxed">The central brain. It intercepts payment webhooks and marshals the AI. Most importantly, it enforces <strong>deterministic stopping rules</strong> in Python to ensure the AI operates within strict financial safety boundaries.</p>
+            </div>
+
+            <!-- Arrows -->
+            <div class="flex flex-col items-center gap-16 flex-shrink-0">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="arrow-right" class="w-6 h-6 text-slate-300"></i>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="arrow-right" class="w-6 h-6 text-slate-300"></i>
+                </div>
+            </div>
+
+            <!-- DB & AI -->
+            <div class="w-1/3 flex flex-col gap-6 h-full justify-center">
+                <!-- Database -->
+                <div class="bg-slate-50 border border-slate-200 p-5 rounded-2xl shadow-sm flex items-start gap-4">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="database" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Database</h3>
+                        <p class="text-emerald-600 font-mono text-[10px] font-bold mb-1">SUPABASE POSTGRESQL</p>
+                        <p class="text-xs text-slate-600">Cloud database via IPv4 pool. Stores immutable audit trails and live metrics.</p>
+                    </div>
+                </div>
+                <!-- AI -->
+                <div class="bg-slate-50 border border-slate-200 p-5 rounded-2xl shadow-sm flex items-start gap-4">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="cpu" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Intelligence</h3>
+                        <p class="text-purple-600 font-mono text-[10px] font-bold mb-1">OPENAI API (GPT-4o-MINI)</p>
+                        <p class="text-xs text-slate-600">Unstructured reasoning. Deduces root causes before returning formatted JSON.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SLIDE 6: Conclusion / The Bar -->
+    <div class="slide bg-ink text-white flex flex-col justify-center px-24 relative overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-brand rounded-full filter blur-[200px] opacity-20 translate-y-1/2 translate-x-1/2"></div>
+        
+        <h1 class="text-5xl font-bold mb-16">Why Niya Clears "The Bar"</h1>
+        
+        <div class="grid grid-cols-2 gap-12">
+            <div class="flex gap-4">
+                <i data-lucide="check-circle-2" class="w-8 h-8 text-emerald-400 flex-shrink-0 mt-1"></i>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Measured Recovery</h3>
+                    <p class="text-slate-400 text-sm">Features a real-time dashboard tracking the exact ₹ amount of revenue rescued across processing batches.</p>
+                </div>
+            </div>
+            
+            <div class="flex gap-4">
+                <i data-lucide="check-circle-2" class="w-8 h-8 text-emerald-400 flex-shrink-0 mt-1"></i>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Immutable Audit Trail</h3>
+                    <p class="text-slate-400 text-sm">Every AI reasoning step and intervention is permanently logged to ensure full transparency and enterprise compliance.</p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <i data-lucide="check-circle-2" class="w-8 h-8 text-emerald-400 flex-shrink-0 mt-1"></i>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Active Execution</h3>
+                    <p class="text-slate-400 text-sm">It’s not just a passive monitor. It triggers simulated outbound WhatsApp workflows directly from the dashboard.</p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <i data-lucide="check-circle-2" class="w-8 h-8 text-emerald-400 flex-shrink-0 mt-1"></i>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Strict Stopping Rules</h3>
+                    <p class="text-slate-400 text-sm">The Python backend enforces hard thresholds. If a customer fails 3 times, the AI safely halts to prevent user frustration.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-20 border-t border-white/10 pt-8">
+            <p class="text-slate-500 font-mono text-sm">RAZORPAY_AI_BUILDATHON_2026 // TRACK_03_REVENUE_RECOVERY</p>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

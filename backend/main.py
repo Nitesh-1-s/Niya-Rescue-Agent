@@ -12,7 +12,7 @@ from database import get_db, init_db, FailedEvent, AuditLog
 import data_generator
 import agent
 
-app = FastAPI(title="RescueOps AI - Track 3")
+app = FastAPI(title="Niya Rescue Agent API")
 
 app.add_middleware(
     CORSMiddleware,

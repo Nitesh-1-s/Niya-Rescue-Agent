@@ -83,14 +83,14 @@ def process_single_event(db, event_id: int):
         db.commit()
         return audit
         
-    # 2. AI Diagnosis (Mocked)
+    # 2. Execute AI Diagnosis
     reasoning, action = analyze_root_cause_and_action(event)
     
-    # 3. Simulate Intervention Outcome
+    # 3. Process Intervention Outcome (Simulation)
     recovered = 0.0
     final_status = "FAILED_FINAL"
     
-    # Simple probability mock for recovery
+    # Simple probability model for intervention success
     import random
     if action == "SILENT_RETRY" and random.random() > 0.3:
         recovered = event.amount
